@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondPageActivity">
+
+    <RelativeLayout
+        android:layout_margin="20dp"
+        android:id="@+id/rlImageContainer"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/ivFotoSelect"
+            android:src="@drawable/select"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+        <ImageButton
+            android:id="@+id/btnsPhoto"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_baseline_add_a_photo_24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/etTitleBook"
+        android:hint="Titulo"
+        android:layout_margin="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/rlImageContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/etAutorBook"
+        android:hint="Autor"
+        android:layout_margin="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/etTitleBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/etEditorialBook"
+        android:layout_margin="20dp"
+        android:hint="Editorial"
+        app:layout_constraintTop_toBottomOf="@+id/etAutorBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/etYearBook"
+        android:layout_margin="20dp"
+        android:hint="Año de publicación"
+        app:layout_constraintTop_toBottomOf="@+id/etEditorialBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnAddNewBook"
+        android:text="Guardar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
