@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.daniort.bookapp.data.entities.BookEntity
 
 
-@Database(entities = [BookEntity::class], version = 1)
+@Database(entities = [BookEntity::class], version = 2)
 abstract class BookDatabase:RoomDatabase() {
 
     abstract fun booksDAO(): BooksDao

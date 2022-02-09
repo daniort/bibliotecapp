@@ -40,19 +40,27 @@ class EditPageActivity : AppCompatActivity() {
             val autor = findViewById<EditText>(R.id.etAutorBookEdit)
             val editorial = findViewById<EditText>(R.id.etEditorialBookEdit)
             val ano = findViewById<EditText>(R.id.etYearBookEdit)
+            val pages = findViewById<EditText>(R.id.etPagesBookEdit)
+            val precio = findViewById<EditText>(R.id.etPriceBookEdit)
+            val categoria = findViewById<EditText>(R.id.etCategoryBookEdit)
             if( fotoTomada.isNotEmpty() ){
                 if(titulo.text.isNotEmpty()){
                     if(autor.text.isNotEmpty()){
                         if(editorial.text.isNotEmpty()){
-                            if(ano.text.isNotEmpty()){
+                            if(ano.text.isNotEmpty() && pages.text.isNotEmpty() && precio.text.isNotEmpty() && categoria.text.isNotEmpty() ){
+
                                 val item = BookModel(
                                     title = titulo.text.toString(),
                                     auth = autor.text.toString(),
                                     edit = editorial.text.toString(),
                                     year = ano.text.toString(),
+                                    category = categoria.text.toString(),
+                                    pages = Integer.parseInt(pages.text.toString()),
+                                    price = Integer.parseInt(precio.text.toString()),
                                     picture = fotoTomada  )
                                 updateBook(item)
                                 finish()
+
                             }
                         }
                     }
@@ -67,11 +75,19 @@ class EditPageActivity : AppCompatActivity() {
             val autor = findViewById<EditText>(R.id.etAutorBookEdit)
             val editorial = findViewById<EditText>(R.id.etEditorialBookEdit)
             val ano = findViewById<EditText>(R.id.etYearBookEdit)
+            val paginas = findViewById<EditText>(R.id.etPagesBookEdit)
+            val precio = findViewById<EditText>(R.id.etPriceBookEdit)
+            val categoria = findViewById<EditText>(R.id.etCategoryBookEdit)
             val avatar = findViewById<ImageView>(R.id.ivFotoSelect)
+
             titulo.setText(book.title)
             autor.setText(book.auth)
             editorial.setText(book.edit)
             ano.setText(book.year)
+            paginas.setText(book.pages.toString())
+            precio.setText(book.price.toString())
+            categoria.setText(book.category)
+
             try {
                 val bitmap =
                     MediaStore.Images.Media.getBitmap(this.contentResolver, Uri.parse(book.picture))
@@ -86,7 +102,11 @@ class EditPageActivity : AppCompatActivity() {
                 auth = bun.getString("authKey")!!,
                 edit = bun.getString("editKey")!!,
                 year = bun.getString("yearKey")!!,
-                picture = bun.getString("pictureKey")!!
+                pages = bun.getInt("pagesKey")!!,
+                picture = bun.getString("pictureKey")!!,
+                        price = bun.getInt("priceKey"),
+                category = bun.getString("categoryKey")!!,
+
             )
         }
 

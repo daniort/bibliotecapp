@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:orientation="horizontal"
     android:layout_margin="10dp"
-    android:layout_height="100dp">
+    android:layout_height="150dp">
 
         <ImageView
             android:id="@+id/ivItem"
@@ -31,24 +31,46 @@
         <TextView
             android:id="@+id/tvBookAuth"
             tools:text= "Daniel Ortiz"
-            android:textSize="15sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:id="@+id/llEditorialAndPages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvBookEditorial"
+                tools:text= "Editorial Porrua"
+                android:textSize="11sp"
+                android:layout_marginRight="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tvBookYear"
+                android:textSize="11sp"
+                tools:text= "Año 1997"
+                android:layout_marginRight="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
+            <TextView
+                android:id="@+id/tvBookPages"
+                android:textSize="11sp"
+                tools:text= "Pags: 234"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
         <TextView
-            android:id="@+id/tvBookEditorial"
-            tools:text= "Editorial Porrua"
-            android:textSize="15sp"
+            android:id="@+id/tvBookCategory"
+            tools:text= "Novela"
+            android:textSize="11sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-
         <TextView
-            android:id="@+id/tvBookYear"
-            tools:text= "1234"
-            android:textSize="15sp"
+            android:id="@+id/tvBookPrice"
+            tools:text= "$450.00"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-
     </LinearLayout>
 
 

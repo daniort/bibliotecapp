@@ -16,7 +16,7 @@
             android:id="@+id/ivFotoSelect"
             android:src="@drawable/select"
             android:layout_width="match_parent"
-            android:layout_height="200dp"/>
+            android:layout_height="150dp"/>
         <ImageButton
             android:id="@+id/btnsPhoto"
             android:layout_alignParentRight="true"
@@ -48,13 +48,57 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <EditText
-        android:id="@+id/etYearBook"
-        android:layout_margin="20dp"
-        android:hint="Año de publicación"
+
+    <LinearLayout
+        android:id="@+id/lieraYearAndPagesAdd"
         app:layout_constraintTop_toBottomOf="@+id/etEditorialBook"
+        app:layout_constraintBottom_toTopOf="@+id/linearPriceAndCategory"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content"
+        >
+        <EditText
+            android:id="@+id/etYearBook"
+            android:hint="Año de publicación"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <View
+            android:layout_width="20dp"
+            android:layout_height="20dp"/>
+        <EditText
+            android:id="@+id/etPagesBook"
+            android:hint="Numero de Paginas"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearPriceAndCategory"
+        app:layout_constraintTop_toBottomOf="@+id/lieraYearAndPagesAdd"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content"
+        >
+        <EditText
+            android:id="@+id/etPriceBook"
+            android:hint="Precio"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <View
+            android:layout_width="20dp"
+            android:layout_height="20dp"/>
+        <EditText
+            android:id="@+id/etCategoryBook"
+            android:hint="Categoría"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnAddNewBook"

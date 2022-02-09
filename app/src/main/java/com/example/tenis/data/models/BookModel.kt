@@ -1,7 +1,9 @@
 package com.daniort.bookapp.data.models
 
 import android.os.Bundle
+import androidx.room.ColumnInfo
 import com.daniort.bookapp.data.entities.BookEntity
+
 
 data class BookModel (
     val uid:Int = 0,
@@ -9,6 +11,9 @@ data class BookModel (
     val auth:String,
     val edit:String,
     val year:String,
+    val price:Int,
+    val category:String,
+    val pages:Int,
     val picture:String
 )
 
@@ -19,12 +24,16 @@ fun BookModel.toBundle(): Bundle {
     bolsa.putString("authKey", auth )
     bolsa.putString("editKey", edit )
     bolsa.putString("yearKey", year )
+    bolsa.putString("categoryKey", category )
+    bolsa.putInt("priceKey", price )
+    bolsa.putInt("pagesKey", pages )
     bolsa.putString("pictureKey", picture )
     return bolsa
 }
 
 fun BookModel.toBookEntity(): BookEntity {
     return BookEntity(
-        uid = uid, title= title, auth = auth, edit= edit, year= year, picture=picture
+        category = category, price = price,
+        uid = uid, title= title, auth = auth, edit= edit, year= year, pages=pages,picture=picture
     )
 }
