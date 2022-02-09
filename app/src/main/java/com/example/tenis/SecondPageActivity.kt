@@ -37,20 +37,27 @@ class   SecondPageActivity : AppCompatActivity() {
         val editorial = findViewById<EditText>(R.id.etEditorialBook)
         val ano = findViewById<EditText>(R.id.etYearBook)
         val pages = findViewById<EditText>(R.id.etPagesBook)
+        val precio = findViewById<EditText>(R.id.etPriceBook)
+        val categoria = findViewById<EditText>(R.id.etCategoryBook)
         if( fotoTomada.isNotEmpty() ){
             if(titulo.text.isNotEmpty()){
                 if(autor.text.isNotEmpty()){
                     if(editorial.text.isNotEmpty()){
-                        if(editorial.text.isNotEmpty()){
-                            val item = BookEntity(
-                                title = titulo.text.toString(),
-                                auth = autor.text.toString(),
-                                edit = editorial.text.toString(),
-                                year = ano.text.toString(),
-                                pages = Integer.parseInt(pages.text.toString()),
-                                picture = fotoTomada  )
-                            saveNewTenis(item)
-                            finish()
+                        if(ano.text.isNotEmpty()){
+                            if(pages.text.isNotEmpty() && precio.text.isNotEmpty() && categoria.text.isNotEmpty()){
+                                val item = BookEntity(
+                                    title = titulo.text.toString(),
+                                    auth = autor.text.toString(),
+                                    edit = editorial.text.toString(),
+                                    year = ano.text.toString(),
+                                    pages = Integer.parseInt(pages.text.toString()),
+                                    price = Integer.parseInt(precio.text.toString()),
+                                    category = categoria.text.toString(),
+                                    picture = fotoTomada  )
+                                saveNewTenis(item)
+                                finish()
+                            }
+
                         }
                     }
                 }

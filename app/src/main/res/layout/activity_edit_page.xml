@@ -15,12 +15,13 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <ImageView
             android:id="@+id/ivFotoSelect"
-            android:src="@drawable/stock"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:contentDescription="Imagen de Perfil" />
+            android:layout_height="150dp"
+            android:contentDescription="Imagen de Perfil"
+            android:src="@drawable/stock" />
 
         <ImageButton
             android:id="@+id/btnsPhoto"
@@ -56,23 +57,63 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <EditText
-        android:id="@+id/etYearBookEdit"
-        android:layout_margin="20dp"
-        android:hint="Año de publicación"
+    <LinearLayout
+        android:id="@+id/lieraYearAndPages"
         app:layout_constraintTop_toBottomOf="@+id/etEditorialBookEdit"
+        app:layout_constraintBottom_toTopOf="@+id/linearPriceAndCategory"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <EditText
-        android:id="@+id/etPagesBookEdit"
         android:layout_margin="20dp"
-        android:hint="Numero de Paginas"
-        app:layout_constraintTop_toBottomOf="@+id/etYearBookEdit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        >
+        <EditText
+            android:id="@+id/etYearBookEdit"
+            android:hint="Año de publicación"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <View
+            android:layout_width="20dp"
+            android:layout_height="20dp"/>
+        <EditText
+            android:id="@+id/etPagesBookEdit"
+            android:hint="Numero de Paginas"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearPriceAndCategory"
+        app:layout_constraintTop_toBottomOf="@+id/lieraYearAndPages"
+        app:layout_constraintBottom_toTopOf="@+id/linearButton"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content"
+        >
+        <EditText
+            android:id="@+id/etPriceBookEdit"
+            android:hint="Precio"
+
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <View
+            android:layout_width="20dp"
+            android:layout_height="20dp"/>
+        <EditText
+            android:id="@+id/etCategoryBookEdit"
+            android:hint="Categoría"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/linearButton"
         app:layout_constraintBottom_toBottomOf="parent"
         android:orientation="horizontal"
         android:gravity="center"

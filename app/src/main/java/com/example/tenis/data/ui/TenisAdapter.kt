@@ -42,12 +42,19 @@ class BookAdapter(val tenis:List<BookEntity>, val room: BookDatabase): RecyclerV
         val ano = view.findViewById<TextView>(R.id.tvBookYear)
         val avatar = view.findViewById<ImageView>(R.id.ivItem)
 
+        val paginas = view.findViewById<TextView>(R.id.tvBookPages)
+        val precio = view.findViewById<TextView>(R.id.tvBookPrice)
+        val categoria = view.findViewById<TextView>(R.id.tvBookCategory)
+
         fun render(book :BookEntity){
             nombre.text = book.title
             autor.text = book.auth
             editorial.text  = book.edit
-            ano.text = book.year
-            //"Pags.: ${book.pages.toString()}"
+            ano.text = "Año " + book.year
+            paginas.text = "Pags.: " + book.pages.toString()
+            precio.text = "$" + book.price.toString()
+            categoria.text = "Genero " + book.category
+
             try {
                 val bitmap =
                     MediaStore.Images.Media.getBitmap( view.context.contentResolver, Uri.parse(book.picture))
