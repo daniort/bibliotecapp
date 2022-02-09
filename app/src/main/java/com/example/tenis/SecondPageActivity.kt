@@ -14,7 +14,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class SecondPageActivity : AppCompatActivity() {
+class   SecondPageActivity : AppCompatActivity() {
 
     lateinit var room: BookDatabase
     private var fotoTomada = "";
@@ -36,6 +36,7 @@ class SecondPageActivity : AppCompatActivity() {
         val autor = findViewById<EditText>(R.id.etAutorBook)
         val editorial = findViewById<EditText>(R.id.etEditorialBook)
         val ano = findViewById<EditText>(R.id.etYearBook)
+        val pages = findViewById<EditText>(R.id.etPagesBook)
         if( fotoTomada.isNotEmpty() ){
             if(titulo.text.isNotEmpty()){
                 if(autor.text.isNotEmpty()){
@@ -46,6 +47,7 @@ class SecondPageActivity : AppCompatActivity() {
                                 auth = autor.text.toString(),
                                 edit = editorial.text.toString(),
                                 year = ano.text.toString(),
+                                pages = Integer.parseInt(pages.text.toString()),
                                 picture = fotoTomada  )
                             saveNewTenis(item)
                             finish()

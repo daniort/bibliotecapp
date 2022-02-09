@@ -40,6 +40,7 @@ class EditPageActivity : AppCompatActivity() {
             val autor = findViewById<EditText>(R.id.etAutorBookEdit)
             val editorial = findViewById<EditText>(R.id.etEditorialBookEdit)
             val ano = findViewById<EditText>(R.id.etYearBookEdit)
+            val pages = findViewById<EditText>(R.id.etPagesBookEdit)
             if( fotoTomada.isNotEmpty() ){
                 if(titulo.text.isNotEmpty()){
                     if(autor.text.isNotEmpty()){
@@ -50,6 +51,7 @@ class EditPageActivity : AppCompatActivity() {
                                     auth = autor.text.toString(),
                                     edit = editorial.text.toString(),
                                     year = ano.text.toString(),
+                                    pages = Integer.parseInt(pages.text.toString()),
                                     picture = fotoTomada  )
                                 updateBook(item)
                                 finish()
@@ -67,11 +69,14 @@ class EditPageActivity : AppCompatActivity() {
             val autor = findViewById<EditText>(R.id.etAutorBookEdit)
             val editorial = findViewById<EditText>(R.id.etEditorialBookEdit)
             val ano = findViewById<EditText>(R.id.etYearBookEdit)
+            val paginas = findViewById<EditText>(R.id.etPagesBookEdit)
+
             val avatar = findViewById<ImageView>(R.id.ivFotoSelect)
             titulo.setText(book.title)
             autor.setText(book.auth)
             editorial.setText(book.edit)
             ano.setText(book.year)
+            paginas.setText(book.pages.toString())
             try {
                 val bitmap =
                     MediaStore.Images.Media.getBitmap(this.contentResolver, Uri.parse(book.picture))
@@ -86,6 +91,7 @@ class EditPageActivity : AppCompatActivity() {
                 auth = bun.getString("authKey")!!,
                 edit = bun.getString("editKey")!!,
                 year = bun.getString("yearKey")!!,
+                pages = bun.getInt("pagesKey")!!,
                 picture = bun.getString("pictureKey")!!
             )
         }

@@ -9,6 +9,7 @@ data class BookModel (
     val auth:String,
     val edit:String,
     val year:String,
+    val pages:Int,
     val picture:String
 )
 
@@ -19,12 +20,13 @@ fun BookModel.toBundle(): Bundle {
     bolsa.putString("authKey", auth )
     bolsa.putString("editKey", edit )
     bolsa.putString("yearKey", year )
+    bolsa.putInt("pagesKey", pages )
     bolsa.putString("pictureKey", picture )
     return bolsa
 }
 
 fun BookModel.toBookEntity(): BookEntity {
     return BookEntity(
-        uid = uid, title= title, auth = auth, edit= edit, year= year, picture=picture
+        uid = uid, title= title, auth = auth, edit= edit, year= year, pages=pages,picture=picture
     )
 }

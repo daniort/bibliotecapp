@@ -14,11 +14,12 @@ data class BookEntity(
     @ColumnInfo(name= "auth") val auth:String,
     @ColumnInfo(name= "edit") val edit:String,
     @ColumnInfo(name= "year") val year:String,
+    @ColumnInfo(name= "pages") val pages:Int,
     @ColumnInfo(name= "picture") val picture:String,
 )
 
 fun BookEntity.toBookModel(): BookModel {
-    return BookModel(uid = uid, title = title, auth=auth, edit=edit, year=year, picture=picture)
+    return BookModel(uid = uid, title = title, auth=auth, edit=edit, year=year, pages=pages, picture=picture)
 }
 
 

@@ -47,6 +47,7 @@ class BookAdapter(val tenis:List<BookEntity>, val room: BookDatabase): RecyclerV
             autor.text = book.auth
             editorial.text  = book.edit
             ano.text = book.year
+            //"Pags.: ${book.pages.toString()}"
             try {
                 val bitmap =
                     MediaStore.Images.Media.getBitmap( view.context.contentResolver, Uri.parse(book.picture))
